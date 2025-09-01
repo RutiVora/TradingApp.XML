@@ -1,0 +1,38 @@
+# Trading-app
+It's an example API Doc for a Trading app. Showing the prices of certain shares (JOI Finance, JSW Steel, and LnT) and how many people bought those shares at the end of the day through the particular app.
+<?xml version="1.0" encoding="UTF-8"?>
+<api>
+  <title>TradeZ End-of-Day API</title>
+  <description>
+    Returns end-of-day share prices and buyer counts 
+    for JOI Finance, JSW Steel, and LnT.
+  </description>
+
+  <endpoint method="GET">/api/v1/eod-stats</endpoint>
+
+  <response>
+    <field name="symbol" type="string">Share name</field>
+    <field name="priceClose" type="number">End-of-day price (INR)</field>
+    <field name="buyersCount" type="integer">Total users who bought it</field>
+  </response>
+
+  <example>
+    <data>
+      <share>
+        <symbol>JOI Finance</symbol>
+        <priceClose>312.45</priceClose>
+        <buyersCount>1842</buyersCount>
+      </share>
+      <share>
+        <symbol>JSW Steel</symbol>
+        <priceClose>965.10</priceClose>
+        <buyersCount>5290</buyersCount>
+      </share>
+      <share>
+        <symbol>LnT</symbol>
+        <priceClose>3598.75</priceClose>
+        <buyersCount>2417</buyersCount>
+      </share>
+    </data>
+  </example>
+</api>
